@@ -27,13 +27,13 @@ a[href="#home"],a[data-role="button"]{margin-top: 0;margin-bottom: 0; padding: .
 
 body{background: rgb(238, 238, 238)!important;}
 
-@media(orientation:landscape){
+@media only screen and (max-width : 480px) and (orientation:landscape){
     .home{overflow: hidden;width: 100vw; min-height: 100vh;}
     .home .lenguaje{ bottom: 5%;}
     .home .image{background-position: 50% 31%;}
     .flexslider .slides{ max-height: 60vh; }
 }
-@media(orientation:portrait){
+@media only screen and (max-width : 320px) and (orientation:portrait){
     .home{overflow: hidden;width: 100vw; min-height: 100vh;}
     .home .lenguaje{ bottom: 5%;}
     .home .image{background-position: 50% 5%;}
