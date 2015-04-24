@@ -1,0 +1,24 @@
+.ui-content{overflow:hidden!important;}
+
+/* Página del Inicio */
+#home{ background: white; }
+.home{ position: relative; overflow: hidden; min-height: 548px;}
+.home > div{ position: absolute; top: 0; }
+.home .image{ width: 100%; height: 100%; background-image: url(../img/home.png); background-repeat: no-repeat; background-position: center; }
+.home .lenguaje{ bottom: 0; width: 100%; min-height: 70px;top: inherit; text-align: center; max-width: 340px; margin:auto; left: 0; right: 0; }
+.home .lenguaje span{ cursor: pointer; font-size: 18px; color: gray; transition:.5s; margin: 0 auto; left: 0; right: 0; position: absolute; }
+.home .lenguaje span:hover{ color:steelblue; font-weight: bold; }
+.home .lenguaje .eng{ padding-right: 1em; top: 14%; left: -17%; }
+.home .lenguaje .esp{ padding-left: 1em;  bottom: 10%; left: 11%;}
+.home .lenguaje hr{ transform: rotate(-11deg); background: steelblue; height: 2px; position: absolute; width: 100%; position: absolute; margin: auto; top: 0; bottom: 0; }
+
+#page3 h1{color: rgb(0, 142, 178);font-family: "Roboto";text-transform: uppercase;width: 90%!important;font-size: 1.8rem;font-weight:bold;padding-bottom: .38rem;border-bottom-color: rgb(0, 142, 178)!important;line-height: 1;}
+#page3 h1 + p{font-family:'Roboto'!important;font-size: 1.3rem;color: rgba(0,0,0,.9);font-weight: 300;}
+#page3 h1 + p:first-letter{text-transform: uppercase;}
+#page1 div[data-role="header"] h1{color: gray !important;font-size: 1.3rem;font-weight: normal;}
+#page2 div[data-role="header"] h1{color: gray !important;font-size: 1.3rem;font-weight: normal;}
+#page3 div[data-role="header"] h1{color: gray !important;font-size: 1.3rem;font-weight: normal;}
+
+.item_category h5{color: rgb(91, 91, 91);font-family: "Roboto";text-transform:uppercase; padding-top:.5em;padding-left:1em; font-size: 1.5rem;font-weight:300;}
+.item_category{ overflow: auto; padding-bottom: .5em; width: 97%; display:block; margin: 0 auto; border-bottom: thin solid rgb(193, 193, 193); margin-top: .25em; }
+.item_category_container{border-radius:50%; background-color: rgba(128, 128, 128, 0.47); max-height:74px;max-width: 76px;min-height:74px;min-width: 76px; overflow: hidden;}

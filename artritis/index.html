@@ -1,0 +1,129 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>nativeDroid - Theme for jQuery Mobile - index</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        
+         <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+
+		<!-- jQueryMobileCSS - original without styling -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+		<!-- nativeDroid core CSS -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.css"   />
+
+		<!-- nativeDroid: Light/Dark -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.light.css"  id='jQMnDTheme' />
+
+		<!-- nativeDroid: Color Schemes -->
+        <link rel="stylesheet" href="css/jquerymobile.nativedroid.color.green.css" id='jQMnDColor' />
+        <link rel="stylesheet" href="css/flexslider.css" id='' />
+        <link rel="stylesheet" href="css/style.css" id='' />
+
+		<!-- jQuery / jQueryMobile Scripts -->
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+         <script src="js/jquery.mobile.router.js"></script>  
+        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        
+        <script src="js/jquery.flexslider-min.js"></script>
+        
+        <!-- Compiled and minified JavaScript -->
+         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>-->
+       
+         <script src="js/acciones.js"></script>
+         
+    </head>
+    <body>
+    <div data-role="page" data-theme="b" id="home">
+        <div data-role="content" >
+            <div class="home">
+                <div class="image"></div>
+                <div class="lenguaje">
+                    <span class="eng">Eng</span>
+                    <hr>
+                    <span class="esp">Esp</span>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div data-role="page" data-theme='b' id="page1">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1 style="margin:0;"><a href="#mypanel" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-bars" style="font-size: xx-large;"></i></a> Profesional tip for arthritis</h1>
+        </div>
+        <div data-role="content" class="categories"> 
+        
+       </div>
+        <div data-role='panel' id='mypanel' data-theme='b'>
+            Menu
+        </div>
+
+    </div>
+    
+    <div data-role="page" data-theme='b' id="page2">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left"  style="  padding-right: 10px; font-size: 31px;"></i></a> Name category</h1>
+        </div>
+        <div data-role="content" class="content_entries" style="padding-top: 10px;">   
+            
+        </div>
+    </div>
+    
+    <div data-role="page" data-theme='b' id="page3">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+            <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> Name category</h1>
+        </div>
+        <div data-role="content" class="content_article" style="padding-top: 10px;">
+        </div>
+    </div>
+
+    </body>
+    <script type="text/html" id="categorias0">
+            <div class="ui-block-a altura"><div class="imagen"><a href="#page2?id=##id"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+    </script>
+    <script type="text/html" id="categorias1">
+            <div class="ui-block-b altura"><div class="imagen"><a href="#page2?id=##id"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+    </script>
+    <script type="text/html" id="entries">
+        <div class="item_category">
+            <div class="ui-block-a" style="width:20%;text-align: center;"> 
+                <div class="item_category_container">
+                    <img src="##img" class="circle responsive-img" style="width:75%;"> 
+                </div>
+            </div>
+            <div class="ui-block-b text" style="width:80%;">
+                <a href="#page3?id=##id"><h5 class="title">##title</h5></a>
+            </div>
+        </div>
+    </script>
+    <script id="detalle_entrada" type="text/html">
+        <div class="entrada">
+            <div class="flexslider">
+                <ul class="slides">
+                </ul>
+            </div>
+            
+            <div>
+                <h1 style="  border-bottom: 1px solid black;
+      width: 80%;
+      margin: 0 auto;">##title</h1>
+                <p style="padding-left: 5%;
+      text-align: justify;
+      padding-right: 5%;">##content</p>
+                
+            </div>
+        </div>
+    </script>
+    <script id="slide" type="text/html">
+        <li>
+            <img src="##slide" />
+        </li>
+    </script>
+</html>

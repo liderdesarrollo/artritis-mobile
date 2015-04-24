@@ -1,0 +1,3 @@
+function helloWrold(){
+    echo "string";
+}
