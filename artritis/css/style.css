@@ -10,7 +10,7 @@
 .home .lenguaje span:hover{ color:steelblue; font-weight: bold; }
 .home .lenguaje .eng{ padding-right: 1em; top: 14%; left: -17%; }
 .home .lenguaje .esp{ padding-left: 1em;  bottom: 10%; left: 11%;}
-.home .lenguaje hr{ transform: rotate(-11deg); background: steelblue; height: 2px; position: absolute; width: 100%; position: absolute; margin: auto; top: 0; bottom: 0; }
+.home .lenguaje hr{ transform: rotate(-11deg);-webkit-transform: rotate(-11deg);-moz-transform: rotate(-11deg);-o-transform: rotate(-11deg); background: steelblue; height: 2px; position: absolute; width: 100%; position: absolute; margin: auto; top: 0; bottom: 0; }
 
 #page3 h1{color: rgb(0, 142, 178);font-family: "Roboto";text-transform: uppercase;width: 90%!important;font-size: 1.8rem;font-weight:bold;padding-bottom: .38rem;border-bottom-color: rgb(0, 142, 178)!important;line-height: 1;}
 #page3 h1 + p{font-family:'Roboto'!important;font-size: 1.3rem;color: rgba(0,0,0,.9);font-weight: 300;word-break:break-word;}
