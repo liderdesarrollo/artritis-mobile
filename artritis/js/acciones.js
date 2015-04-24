@@ -21,7 +21,7 @@ var router=new $.mobile.Router({
   "#page3": {handler: "article", events: "s" },
 },{
   home: function(type,match,ui){
-    $('span').click(function(){
+    $('span').unbind('click').click(function(){
         $.mobile.changePage( "#page1", { role: "page" } );
     });
   },
@@ -34,8 +34,8 @@ var router=new $.mobile.Router({
          html: ""
      });
      setTimeout(function(){
-         $('.title').click(function(){
-              $(this).parent().find('.imagen').find('a').click();
+         $('.title').unbind('click').click(function(){
+              $(this).parent().find('.imagen').find('a').unbind('click').click();
           });
      },500);
      
@@ -252,7 +252,7 @@ var router=new $.mobile.Router({
   defaultArgsRe: true
 });
 
-$('.back').click(function(){
+$('.back').unbind('click').click(function(){
     alert()
     history.back();
 });
@@ -266,4 +266,5 @@ function localStoriage(json){
         control = true;
     }
 }
-  
+
+
