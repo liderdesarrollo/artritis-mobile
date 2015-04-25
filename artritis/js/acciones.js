@@ -14,7 +14,7 @@
 
 var webService = "http://72.29.87.162/~artritis/wordpress/zopp.php";
 
-var router=new $.mobile.Router({
+var router = new $.mobile.Router({
   "#home": {handler: "home", events: "s" },
   "#page1": {handler: "homepage", events: "s" },
   "#page2": {handler: "entrades", events: "s" },
@@ -33,11 +33,27 @@ var router=new $.mobile.Router({
          theme: 'z',
          html: ""
      });
+     
+    
+     
      setTimeout(function(){
          $('.title').unbind('click').click(function(){
              $('.content_entries').fadeOut(5);
               $(this).parent().find('.imagen').find('a').unbind('click').click();
           });
+          
+           $('.imagen a').click(function(e) {
+                 e.preventDefault();
+                 var href = $(this).attr("href");
+                //  alert(href);
+                clean_containers();
+                 
+                 window.location = href;
+                 
+             });
+             $('.back_languaje').unbind('click').click(function() {
+                 $.mobile.changePage( "#home", { role: "page" } );
+             });
      },500);
      
      
@@ -54,7 +70,6 @@ var router=new $.mobile.Router({
               success:function(data){
                   
                   var datos = JSON.parse(data);
-                //   console.log(datos);
                   
                   localStorage.setItem("datos", JSON.stringify(datos));
     
@@ -62,7 +77,6 @@ var router=new $.mobile.Router({
                   var str="";
                   var c=0;
                   for(var i = 0; i < datos.length; i++){
-                        // console.log(datos[i]);
                       if(i%2==0){
     
                           var html=jQuery("#categorias0").html();
@@ -118,7 +132,6 @@ var router=new $.mobile.Router({
                   var str="";
                   var c=0;
                   for(var i = 0; i < datos.length; i++){
-                        // console.log(datos[i]);
                       if(i%2==0){
     
                           var html=jQuery("#categorias0").html();
@@ -172,16 +185,8 @@ var router=new $.mobile.Router({
 
   },
   entrades:function(type,match,ui){
-       $('.content_entries').fadeOut(5);
       $('.content_entries').empty();
-      $.mobile.loading( 'show', {
-                 text: 'Cargando...',
-                 textVisible: true,
-                 theme: 'z',
-                 html: ""
-             });  
       var parameters = router.getParams(match[1]);
-      console.log(parameters.id);
       $.ajax({
           type: "GET",
           url: webService,
@@ -189,7 +194,6 @@ var router=new $.mobile.Router({
               accion:"entradas",
               id: parameters.id
           },success:function(data){
-              console.log(data);
               var response = JSON.parse(data);
               var entries_template = $('#entries').html();
               var category = "";
@@ -201,18 +205,13 @@ var router=new $.mobile.Router({
                 category = i.category;
                 $('.content_entries').append(html);
               });
-              $('.ui-title').find('span.title_entrade').text(category);
-              $.mobile.loading( 'hide', {
-                 text: 'Cargando...',
-                 textVisible: true,
-                 theme: 'z',
-                 html: ""
-             });
+              $('.title_entrade').text(category);
              $('.content_entries').fadeIn(500);
           }
       });
       
         $('.back').unbind('click').click(function(){
+            clean_containers()
             history.back();
         });
         setTimeout(function(){
@@ -220,7 +219,6 @@ var router=new $.mobile.Router({
                 $(e.target).find('.text').find('a').click();
             });
             $('.item_category_container img').click(function(e){
-                console.log(e.target);
                 $(e.target).parent().parent().parent().find('.text').find('a').click();
             });
         },500);
@@ -247,7 +245,6 @@ var router=new $.mobile.Router({
               galeria.forEach(function(o,i){
                   htm += img_slide.replace('##slide',o);
               });
-              console.log(response);
               $('.content_article').append(html);
                $('.content_article').fadeIn(500);
               $('.content_article').find('.flexslider').find('.slides').html(htm);
@@ -256,6 +253,7 @@ var router=new $.mobile.Router({
           }
       });
       $('.back').unbind('click').click(function(){
+          clean_containers()
             history.back();
         });
   },
@@ -270,18 +268,12 @@ var router=new $.mobile.Router({
 });
 
 $('.back').unbind('click').click(function(){
-    alert()
+    clean_containers()
     history.back();
 });
-var control = true;
-function localStoriage(json){
-    if(control){
-        console.log("funcrion");
-        console.log(json);
-        control = false;
-    }else{
-        control = true;
-    }
+function clean_containers(){
+    $('#page2 div[data-role="content"]').empty();
+    $('#page3 div[data-role="content"]').empty();
 }
 
 
