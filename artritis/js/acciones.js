@@ -186,6 +186,12 @@ var router = new $.mobile.Router({
   },
   entrades:function(type,match,ui){
       $('.content_entries').empty();
+      $.mobile.loading( 'show', {
+         text: 'Cargando...',
+         textVisible: true,
+         theme: 'z',
+         html: ""
+     }); 
       var parameters = router.getParams(match[1]);
       $.ajax({
           type: "GET",
@@ -205,6 +211,13 @@ var router = new $.mobile.Router({
                 category = i.category;
                 $('.content_entries').append(html);
               });
+               $.mobile.loading( 'hide', {
+                 text: 'Cargando...',
+                 textVisible: true,
+                 theme: 'z',
+                 html: ""
+             });
+
               $('.title_entrade').text(category);
              $('.content_entries').fadeIn(500);
           }
