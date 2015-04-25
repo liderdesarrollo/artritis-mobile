@@ -45,7 +45,6 @@ var router = new $.mobile.Router({
            $('.imagen a').click(function(e) {
                  e.preventDefault();
                  var href = $(this).attr("href");
-                //  alert(href);
                 clean_containers();
                  
                  window.location = href;
@@ -228,6 +227,13 @@ var router = new $.mobile.Router({
             history.back();
         });
         setTimeout(function(){
+            $('.item_category .text a').click(function(e){
+                e.preventDefault();
+                var href = $(this).attr("href");
+                clean_containers();
+                 
+                 window.location = href;
+            });
             $('.item_category').click(function(e){
                 $(e.target).find('.text').find('a').click();
             });
