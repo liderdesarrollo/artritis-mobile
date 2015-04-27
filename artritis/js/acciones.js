@@ -208,14 +208,14 @@ var router = new $.mobile.Router({
                                             .replace('##id',i.id);
 
                 category = i.category;
-                $('.content_entries').append(html);
-              });
-               $.mobile.loading( 'hide', {
-                 text: 'Cargando...',
-                 textVisible: true,
-                 theme: 'z',
-                 html: ""
-             });
+                    $('.content_entries').append(html);
+                });
+                 $.mobile.loading( 'hide', {
+                     text: 'Cargando...',
+                     textVisible: true,
+                     theme: 'z',
+                     html: ""
+                 });
 
               $('.title_entrade').text(category);
              $('.content_entries').fadeIn(500);
@@ -231,8 +231,7 @@ var router = new $.mobile.Router({
                 e.preventDefault();
                 var href = $(this).attr("href");
                 clean_containers();
-                 
-                 window.location = href;
+                window.location = href;
             });
             $('.item_category').click(function(e){
                 $(e.target).find('.text').find('a').click();
