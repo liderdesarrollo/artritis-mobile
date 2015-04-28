@@ -1735,7 +1735,7 @@ progress  {
 @media(max-width: 360px){
     .imagen a img{
         max-width: inherit;
-          margin-left: -13%;
+          margin-left: 0%;
     }  
     .m:nth-child(1) .altura:nth-child(1) .imagen a img{
           margin-left: -5%;
