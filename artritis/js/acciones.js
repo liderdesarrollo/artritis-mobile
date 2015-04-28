@@ -16,7 +16,7 @@ var webService = "http://72.29.87.162/~artritis/wordpress/zopp.php";
 
 var router = new $.mobile.Router({
   "#home": {handler: "home", events: "s" },
-  "#menu": {handler: "homepage", events: "s" },
+  "#menu": {handler: "menu", events: "s" },
   "#entrades": {handler: "entrades", events: "s" },
   "#article": {handler: "article", events: "s" },
 },{
@@ -28,9 +28,8 @@ var router = new $.mobile.Router({
         $('#menu div[data-role="content"]').css('display','none');
     });
   },
-  homepage: function(type,match,ui){
+  menu: function(type,match,ui){
      if(localStorage.getItem('idioma') == 'eng'){
-         $('.title_app').text('Professional tips for arthritis');
          $('.title_app').text('Professional tips for arthritis');
      }else{
          $('.title_app').text('Consejos profesionales para la artritis');
