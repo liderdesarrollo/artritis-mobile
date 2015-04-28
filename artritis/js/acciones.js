@@ -16,15 +16,16 @@ var webService = "http://72.29.87.162/~artritis/wordpress/zopp.php";
 
 var router = new $.mobile.Router({
   "#home": {handler: "home", events: "s" },
-  "#page1": {handler: "homepage", events: "s" },
-  "#page2": {handler: "entrades", events: "s" },
-  "#page3": {handler: "article", events: "s" },
+  "#menu": {handler: "homepage", events: "s" },
+  "#entrades": {handler: "entrades", events: "s" },
+  "#article": {handler: "article", events: "s" },
 },{
   home: function(type,match,ui){
     $('span').unbind('click').click(function(e){
         var idioma = e.target.className;
         localStorage.setItem("idioma", idioma);
-        $.mobile.changePage( "#page1", { role: "page" } );
+        $.mobile.changePage( "#menu", { role: "page" } );
+        $('#menu div[data-role="content"]').css('display','none');
     });
   },
   homepage: function(type,match,ui){
@@ -34,15 +35,13 @@ var router = new $.mobile.Router({
      }else{
          $('.title_app').text('Consejos profesionales para la artritis');
      }
-     
+     $('#menu div[data-role="content"]').css('display','none');
      $.mobile.loading( 'show', {
          text: 'Cargando...',
          textVisible: true,
          theme: 'z',
          html: ""
      });
-     
-    
      
      setTimeout(function(){
          $('.title').unbind('click').click(function(){
@@ -127,6 +126,7 @@ var router = new $.mobile.Router({
                      theme: 'z',
                      html: ""
                  });   
+                 $('#menu div[data-role="content"]').toggle("explode");
               }
               
         });
@@ -234,7 +234,8 @@ var router = new $.mobile.Router({
       });
       
         $('.back').unbind('click').click(function(){
-            clean_containers()
+            clean_containers();
+            $('#menu div[data-role="content"]').css('display','none');
             history.back();
         });
         setTimeout(function(){
@@ -303,8 +304,8 @@ $('.back').unbind('click').click(function(){
     history.back();
 });
 function clean_containers(){
-    $('#page2 div[data-role="content"]').empty();
-    $('#page3 div[data-role="content"]').empty();
+    $('#entrades div[data-role="content"]').empty();
+    $('#article div[data-role="content"]').empty();
 }
 
 
