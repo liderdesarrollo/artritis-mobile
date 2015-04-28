@@ -21,11 +21,19 @@ var router = new $.mobile.Router({
   "#page3": {handler: "article", events: "s" },
 },{
   home: function(type,match,ui){
-    $('span').unbind('click').click(function(){
+    $('span').unbind('click').click(function(e){
+        var idioma = e.target.className;
+        localStorage.setItem("idioma", idioma);
         $.mobile.changePage( "#page1", { role: "page" } );
     });
   },
   homepage: function(type,match,ui){
+     if(localStorage.getItem('idioma') == 'eng'){
+         $('.title_app').text('Professional tips for arthritis');
+         $('.title_app').text('Professional tips for arthritis');
+     }else{
+         $('.title_app').text('Consejos profesionales para la artritis');
+     }
      
      $.mobile.loading( 'show', {
          text: 'Cargando...',
@@ -56,14 +64,15 @@ var router = new $.mobile.Router({
      },500);
      
      
-    if(typeof(Storage) !== "undefined") {
+   /// if(typeof(Storage) !== "undefined") {
      
-        if(localStorage.getItem("datos")==null)
-        {
+      //  if(localStorage.getItem("datos")==null)
+    //    {
            $.ajax({
               url:webService,
               data:{
-                accion:"categorias"
+                accion:"categorias",
+                idioma:localStorage.getItem("idioma")
               },
               type:"GET",
               success:function(data){
@@ -122,7 +131,7 @@ var router = new $.mobile.Router({
               
         });
         
-        }
+       /* }
         else
         {
             var datos = JSON.parse(localStorage.getItem("datos"));
@@ -176,9 +185,9 @@ var router = new $.mobile.Router({
                  
             
             
-        }
+        }*/
         
-    }
+  //  }
     
       
 
@@ -192,12 +201,14 @@ var router = new $.mobile.Router({
          html: ""
      }); 
       var parameters = router.getParams(match[1]);
+      console.log(localStorage.getItem('idioma'));
       $.ajax({
           type: "GET",
           url: webService,
           data:{
               accion:"entradas",
-              id: parameters.id
+              id: parameters.id,
+                idioma:localStorage.getItem("idioma")
           },success:function(data){
               var response = JSON.parse(data);
               var entries_template = $('#entries').html();
@@ -252,9 +263,11 @@ var router = new $.mobile.Router({
           url: webService,
           data: {
               id:id,
-              accion: "articulo"
+              accion: "articulo",
+              idioma:localStorage.getItem('idioma')
           },success: function(data){
               var response = JSON.parse(data);
+              console.log(response);
               var template = $('#detalle_entrada').html();
               var img_slide = $('#slide').html();
               var html = template.replace("##title",response.title).replace("##content",response.content).replace('##slider',response.galeria_);
