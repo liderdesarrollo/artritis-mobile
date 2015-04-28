@@ -1762,7 +1762,7 @@ progress  {
 .m:nth-child(even) .ui-block-b {
     width: 52% !Important;
 }
-.m:nth-child(1n) .ui-block-a .titulo {
+/*.m:nth-child(1n) .ui-block-a .titulo {
   border-bottom-color: rgb(62, 181, 231);
 }
 .m:nth-child(1n) .ui-block-b .titulo {
@@ -1785,7 +1785,7 @@ progress  {
 }
 .m:nth-child(4n) .ui-block-b .titulo {
     border-bottom-color: rgb(239, 131, 19);
-}
+}*/
 
 .ui-content {
   padding: 0px;

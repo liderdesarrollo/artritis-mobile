@@ -12,8 +12,10 @@
 .home .lenguaje .esp{ padding-left: 1em;  bottom: 10%; left: 11%;}
 .home .lenguaje hr{ transform: rotate(-13deg);-webkit-transform: rotate(-13deg);-moz-transform: rotate(-13deg);-o-transform: rotate(-13deg); background: steelblue; height: 2px; position: absolute; width: 100%; position: absolute; margin: auto; top: 0; bottom: 0; }
 
-#article h1{color: rgb(0, 142, 178);font-family: "Roboto";text-transform: uppercase;width: 90%!important;font-size: 1.8rem;font-weight:bold;padding-bottom: .38rem;border-bottom-color: rgb(0, 142, 178)!important;line-height: 1;}
-#article h1 + p{font-family:'Roboto'!important;font-size: 1.3rem;color: rgba(0,0,0,.9);font-weight: 300;word-break:break-word;}
+#article h1{color: rgb(0, 142, 178);font-family: "Roboto";text-transform: uppercase;width: 90%!important;font-size: 1.8rem;font-weight:bold;padding-bottom: .38rem;border-bottom-color: rgb(0, 142, 178);line-height: 1;}
+#article h1 + p{font-family:'Roboto'!important;font-size: 1.1rem;color: rgba(0,0,0,.9);font-weight: 300;word-break:break-word;}
+#article h1 + p + p{color: #404040; padding: 0 5%;font-family:'Roboto'!important;font-size: 1.1rem;color: rgba(0,0,0,.9);font-weight: 300;word-break:break-word;}
+#article h1 + p + p + ul{margin-top: 0;}
 #article h1 + p:first-letter{text-transform: uppercase;}
 #menu div[data-role="header"] h1{color: gray !important;font-size: 1.3rem!important;font-weight: normal!important; padding-top: 0!important; line-height: 2;}
 #entrades div[data-role="header"] h1{color: gray !important;font-size: 1.3rem!important;font-weight: normal!important; padding-top: 0!important; line-height: 2;}
@@ -45,6 +47,7 @@ body{background: rgb(238, 238, 238)!important;}
     .item_category h5{ padding-left: .5em; font-size: 1.2rem; padding-top:9px; }
     .titulo{ font-size: 1rem; }
     #menu div[data-role="header"] h1{font-size: 1.1rem!important;padding-top: 4px!important;}
+    .flexslider .slides{max-height: 250px!important;}
 }
 @media (min-width: 300px){
     .home{overflow: hidden!important;}

@@ -49,12 +49,19 @@ var router = new $.mobile.Router({
      setTimeout(function(){
          $('.title').unbind('click').click(function(){
              $('.content_entries').fadeOut(5);
-              $(this).parent().find('.imagen').find('a').unbind('click').click();
+              var col = $(this).css('border-bottom-color');
+              localStorage.setItem('color',col);
+              $(this).parent().find('.imagen').find('a').unbind('click').click();s
           });
           
            $('.imagen a').click(function(e) {
                  e.preventDefault();
+                 var color = $(this).parent().parent().find('.titulo').css('border-bottom-color');
+                 localStorage.setItem('color',color);
+                 console.log(localStorage.getItem('color'));
                  var href = $(this).attr("href");
+                 var c = localStorage.getItem('color');
+                 
                 clean_containers();
                  
                  window.location = href;
@@ -80,12 +87,13 @@ var router = new $.mobile.Router({
               success:function(data){
                   
                   var datos = JSON.parse(data);
-                  
+                  console.log(datos);
                   localStorage.setItem("datos", JSON.stringify(datos));
     
                   $(".categories").empty();
                   var str="";
                   var c=0;
+                  var colores = [];
                   for(var i = 0; i < datos.length; i++){
                       if(i%2==0){
     
@@ -103,6 +111,7 @@ var router = new $.mobile.Router({
                                     .replace("##id",datos[i].id)
                                     .replace("##titulo",datos[i].nombre)
                                     .replace("##img",datos[i].img);
+                                    colores[i] = datos[i].color;
                           c++;
                       }else if(c==2){
                           str += "</div>";
@@ -111,17 +120,18 @@ var router = new $.mobile.Router({
                                         .replace("##id",datos[i].id)
                                         .replace("##titulo",datos[i].nombre)
                                         .replace("##img",datos[i].img);
+                                        colores[i] = datos[i].color;
                           c=1;
                       }else{
                           str += html.replace("##titulo",datos[i].nombre)
                                         .replace("##id",datos[i].id)
                                         .replace("##titulo",datos[i].nombre)
                                         .replace("##img",datos[i].img);
+                                        colores[i] = datos[i].color;
                           c++;
                       }
     
                   }
-    
                   $(".categories").append(str);
                   $.mobile.loading( 'hide', {
                      text: 'foo',
@@ -129,6 +139,11 @@ var router = new $.mobile.Router({
                      theme: 'z',
                      html: ""
                  });   
+                 var items = $('.m > div');
+                console.log(colores);
+                for(var k = 0; k < colores.length; k++){
+                    items.eq(k).find('.titulo').css('border-bottom-color', colores[k]);
+                }
                  $('#menu div[data-role="content"]').toggle("explode");
               }
               
@@ -196,6 +211,13 @@ var router = new $.mobile.Router({
 
   },
   entrades:function(type,match,ui){
+      $(window).keypress(function(e){
+          console.log(e.keyCode);
+      });
+      
+      var c = localStorage.getItem('color');
+      cambiar_colores(ui.toPage,c);
+      
       $('.content_entries').empty();
       $.mobile.loading( 'show', {
          text: 'Cargando...',
@@ -257,6 +279,9 @@ var router = new $.mobile.Router({
       $('.content_article').empty();
       $('.content_article').css("display","none!important");
       
+      var c = localStorage.getItem('color');
+      cambiar_colores(ui.toPage,c);
+      
       var parameters = router.getParams(match[1]);
       var id = parameters.id;
       $.ajax({
@@ -270,14 +295,14 @@ var router = new $.mobile.Router({
               var response = JSON.parse(data);
               var template = $('#detalle_entrada').html();
               var img_slide = $('#slide').html();
-              var html = template.replace("##title",response.title).replace("##content",response.content).replace('##slider',response.galeria_);
+              var html = template.replace("##title", response.title).replace("##content", response.content).replace('##slider', response.galeria_);
               var galeria = response.ale;
               var htm ="";
               galeria.forEach(function(o,i){
-                  htm += img_slide.replace('##slide',o);
+                  htm += img_slide.replace('##slide', o);
               });
               $('.content_article').append(html);
-               $('.content_article').fadeIn(500);
+               $('.content_article').fadeIn(800);
               $('.content_article').find('.flexslider').find('.slides').html(htm);
               
               $('.flexslider').flexslider({controlNav:false});
@@ -306,5 +331,19 @@ function clean_containers(){
     $('#entrades div[data-role="content"]').empty();
     $('#article div[data-role="content"]').empty();
 }
-
+function cambiar_colores(obj,c){
+    var color = c;
+    obj.find('div[data-role="header"]').css('border-bottom-color',color);
+    obj.find('div[data-role="header"]').find('h1').find('a').css({'color':color,'border-right-color':color});
+    obj.find('div[data-role="header"]').find('h1').find('span').css('color',color);
+    setTimeout(function(){
+        $('.item_category').css('border-color',color);
+        $('.item_category .item_category_container').css('border','thin solid '+color);
+        $('.item_category h5 ').css({'text-shadow':'1px 1px 1px white'});
+        $('.flexslider .slides ').css({'border-bottom':'12px solid '+color});
+        $('#article h1').css({'color':color,'border-bottom':"1px solid "+color});
+        
+    },500);
+    console.log($('.item_category'));
+}
 
