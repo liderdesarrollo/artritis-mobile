@@ -42,6 +42,10 @@ var router = new $.mobile.Router({
          html: ""
      });
      
+     $('.title_app').unbind('click').click(function(e) {
+         e.preventDefault();
+     });
+     
      setTimeout(function(){
          $('.title').unbind('click').click(function(){
              $('.content_entries').fadeOut(5);
@@ -200,7 +204,6 @@ var router = new $.mobile.Router({
          html: ""
      }); 
       var parameters = router.getParams(match[1]);
-      console.log(localStorage.getItem('idioma'));
       $.ajax({
           type: "GET",
           url: webService,
@@ -216,7 +219,6 @@ var router = new $.mobile.Router({
                 var html = entries_template.replace('##img',i.img)
                                             .replace('##title', i.title)
                                             .replace('##id',i.id);
-
                 category = i.category;
                     $('.content_entries').append(html);
                 });
@@ -226,7 +228,6 @@ var router = new $.mobile.Router({
                      theme: 'z',
                      html: ""
                  });
-
               $('.title_entrade').text(category);
              $('.content_entries').fadeIn(500);
           }
@@ -267,7 +268,6 @@ var router = new $.mobile.Router({
               idioma:localStorage.getItem('idioma')
           },success: function(data){
               var response = JSON.parse(data);
-              console.log(response);
               var template = $('#detalle_entrada').html();
               var img_slide = $('#slide').html();
               var html = template.replace("##title",response.title).replace("##content",response.content).replace('##slider',response.galeria_);

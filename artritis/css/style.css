@@ -24,7 +24,7 @@ a[href="#home"],a[data-role="button"]{margin-top: 0;margin-bottom: 0; padding: .
 .item_category{ overflow: auto; padding-bottom: .5em; width: 97%; display:block; margin: 0 auto; border-bottom: thin solid rgb(193, 193, 193); margin-top: .25em; cursor:pointer; }
 .item_category_container{border-radius:50%; background-color: rgba(128, 128, 128, 0.47); max-height:56px;max-width: 58px;min-height:56px;min-width: 58px; overflow: hidden;}
 .m {overflow: auto;margin-bottom: .1em;}
-
+span.title_app,span.title_entrade {font-size: 80%;}
 body{background: rgb(238, 238, 238)!important;}
 
 @media only screen and (max-width : 480px) and (orientation:landscape){
@@ -36,14 +36,18 @@ body{background: rgb(238, 238, 238)!important;}
 @media only screen and (max-width : 320px) and (orientation:portrait){
     .home{overflow: hidden;width: 100vw; min-height: 100vh;}
     .home .lenguaje{ bottom: 20%;}
-    .home .image{background-position: 50% 5%;}
+    .home .image{background-position: 50% 50%;}
 }
 
 @media (max-width: 320px){
     .home{overflow: hidden;}
+    .home .image{background-position: 50% 50%;}
     .item_category h5{ padding-left: .5em; font-size: 1.2rem; padding-top:9px; }
     .titulo{ font-size: 1rem; }
     #menu div[data-role="header"] h1{font-size: 1.1rem!important;padding-top: 4px!important;}
+}
+@media (min-width: 300px){
+    .home{overflow: hidden!important;}
 }
 #article h1 + p + ul{list-style-type: circle;padding-left: 8%;}
 #article h1 + p + p + ul{list-style-type: circle;padding-left: 8%;}

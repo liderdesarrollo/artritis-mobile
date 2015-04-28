@@ -1736,7 +1736,10 @@ progress  {
     .imagen a img{
         max-width: inherit;
           margin-left: -13%;
-    }    
+    }  
+    .m:nth-child(1) .altura:nth-child(1) .imagen a img{
+          margin-left: -5%;
+    }  
 }
 @media(min-width: 440px){
     .imagen a img{
