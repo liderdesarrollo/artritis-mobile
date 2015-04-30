@@ -1676,9 +1676,6 @@ progress  {
  code developer carlos
 */
 
-.altura  {
-    margin: 1px;
-}
 .m > div{
     position: relative!important;
     overflow: hidden;
@@ -1748,44 +1745,59 @@ progress  {
     }    
 }
 .m:nth-child(odd) .ui-block-a {
-    width: 52% !Important;
+    width: 53% !Important;
     margin-right: 2%;
 }
 .m:nth-child(odd) .ui-block-b {
-    width: 44% !Important;
+    width: 45% !Important;
 }
 
 .m:nth-child(even) .ui-block-a {
-    width: 44% !Important;
+    width: 45% !Important;
     margin-right: 2%;
 }
 .m:nth-child(even) .ui-block-b {
-    width: 52% !Important;
+    width: 53% !Important;
 }
-/*.m:nth-child(1n) .ui-block-a .titulo {
-  border-bottom-color: rgb(62, 181, 231);
+.m:nth-child(1n) .ui-block-a .titulo:hover,
+.m:nth-child(1n) .ui-block-a:hover .titulo {
+  text-shadow: 0 0 4px rgb(62, 179, 228);
+  font-weight: 300;
 }
-.m:nth-child(1n) .ui-block-b .titulo {
-    border-bottom-color: rgb(244, 138, 18);
+.m:nth-child(1n) .ui-block-b .titulo:hover,
+.m:nth-child(1n) .ui-block-b:hover .titulo {
+	text-shadow: 0 0 4px rgb(244, 138, 18);
+  	font-weight: 300;
 }
-.m:nth-child(2n) .ui-block-a .titulo {
-  border-bottom-color: rgb(96, 32, 135);
+.m:nth-child(2n) .ui-block-a .titulo:hover ,
+.m:nth-child(2n) .ui-block-a:hover .titulo {
+  text-shadow: 0 0 4px rgb(96, 32, 135);
+  font-weight: 300;
 }
-.m:nth-child(2n) .ui-block-b .titulo {
+.m:nth-child(2n) .ui-block-b .titulo:hover,
+.m:nth-child(2n) .ui-block-b:hover .titulo {
     border-bottom-color: rgb(239, 81, 23);
 }
-.m:nth-child(3n) .ui-block-a .titulo {
-  border-bottom-color: rgb(72, 172, 207);
+.m:nth-child(3n) .ui-block-a .titulo:hover,
+.m:nth-child(3n) .ui-block-a:hover .titulo {
+	text-shadow: 0 0 4px rgb(72, 172, 207);
+  font-weight: 300;
 }
-.m:nth-child(3n) .ui-block-b .titulo {
-    border-bottom-color: rgb(0, 97, 151);
+.m:nth-child(3n) .ui-block-b .titulo:hover,
+.m:nth-child(3n) .ui-block-b:hover .titulo {
+    text-shadow: 0 0 4px rgb(72, 172, 207);
+  	font-weight: 300;
 }
-.m:nth-child(4n) .ui-block-a .titulo {
-  border-bottom-color: rgb(43, 168, 58);
+.m:nth-child(4n) .ui-block-a .titulo:hover,
+.m:nth-child(4n) .ui-block-a:hover .titulo {
+	text-shadow: 0 0 4px rgb(43, 168, 58);
+  	font-weight: 300;
 }
-.m:nth-child(4n) .ui-block-b .titulo {
-    border-bottom-color: rgb(239, 131, 19);
-}*/
+.m:nth-child(4n) .ui-block-b .titulo:hover,
+.m:nth-child(4n) .ui-block-b:hover .titulo {
+   text-shadow: 0 0 4px rgb(239, 131, 19);
+  font-weight: 300;
+}
 
 .ui-content {
   padding: 0px;

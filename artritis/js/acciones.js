@@ -51,7 +51,7 @@ var router = new $.mobile.Router({
              $('.content_entries').fadeOut(5);
               var col = $(this).css('border-bottom-color');
               localStorage.setItem('color',col);
-              $(this).parent().find('.imagen').find('a').unbind('click').click();s
+              $(this).parent().find('.imagen').find('a').unbind('click').click();
           });
           
            $('.imagen a').click(function(e) {
@@ -211,9 +211,6 @@ var router = new $.mobile.Router({
 
   },
   entrades:function(type,match,ui){
-      $(window).keypress(function(e){
-          console.log(e.keyCode);
-      });
       
       var c = localStorage.getItem('color');
       cambiar_colores(ui.toPage,c);
