@@ -1723,6 +1723,7 @@ progress  {
 
 .imagen a img{
     max-width:100%;
+    min-width:100%;
     width:auto;
     display: block;
     margin: 0 auto;
@@ -1731,7 +1732,6 @@ progress  {
 }
 @media(max-width: 360px){
     .imagen a img{
-        max-width: inherit;
           margin-left: 0%;
     }  
     .m:nth-child(2) .altura:nth-child(2) .imagen a img{
