@@ -25,9 +25,10 @@ a[href="#home"],a[data-role="button"]{margin-top: 0;margin-bottom: 0; padding: .
 .item_category h5{font-weight: normal!important;color: rgb(91, 91, 91);font-family: "Roboto";text-transform:uppercase; padding-top:.2em; font-size: 1.5rem;font-weight:300;}
 .item_category{ overflow: auto; padding-bottom: .5em; width: 97%; display:block; margin: 0 auto; border-bottom: thin solid rgb(193, 193, 193); margin-top: .25em; cursor:pointer; }
 .item_category_container{border-radius:50%; background-color: rgba(128, 128, 128, 0.47); max-height:56px;max-width: 58px;min-height:56px;min-width: 58px; overflow: hidden;}
-.m {overflow: auto;margin-bottom: .1em;}
+.m {overflow: auto;margin-bottom: 1%;}
 span.title_app,span.title_entrade {font-size: 77%;}
 body{background: rgb(238, 238, 238)!important;}
+.flexslider .slides .img-parallax{ position: relative;top:0; background-size: contain;background-repeat: no-repeat;background-position: top center;background-attachment: fixed;}
 
 @media only screen and (max-width : 480px) and (orientation:landscape){
     .home{overflow: hidden;width: 100vw; min-height: 100vh;}
@@ -49,7 +50,7 @@ body{background: rgb(238, 238, 238)!important;}
     #menu div[data-role="header"] h1{font-size: 1.1rem!important;padding-top: 4px!important;}
     .flexslider .slides{max-height: 270px!important;}
     .flexslider .slides > li {height: 270px;}
-    .flexslider .slides img {height: 100%;width: auto;margin: 0 auto;}
+    .flexslider .slides .img-parallax {height: 100%;width: auto;margin: 0 auto;}
     .imagen{height:130px;}
 }
 @media (max-width:480px){
@@ -59,17 +60,17 @@ body{background: rgb(238, 238, 238)!important;}
     .home{overflow: hidden!important;}
 }
 @media(min-width:321px){
-    .flexslider .slides img {height: 100%;width: auto;margin: 0 auto;}
+    .flexslider .slides .img-parallax {height: 100%;width: auto;margin: 0 auto;}
     .flexslider .slides > li {height: 40vh;}
     .imagen{height:150px;}
 }
 @media(min-width:800px){
     .imagen{height:200px;}
 }
-#article h1 + p + ul{list-style-type: circle;padding-left: 8%;font-size: 1.3rem;}
-#article h1 + p + p + ul{list-style-type: circle;padding-left: 8%;font-size: 1.3rem;}
-#article h1 + p + p + p + ul{list-style-type: circle;padding-left: 8%;font-size: 1.3rem;}
-#article h1 + p + p + ul li{list-style-type: circle;font-size: 1.3rem;}
-#article h1 + p + p + p + ul li{list-style-type: circle;font-size: 1.3rem;}
-#article h1 + p + ul li{list-style-type: circle;font-size: 1.3rem;}
+#article h1 + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
+#article h1 + p + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
+#article h1 + p + p + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
+#article h1 + p + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
+#article h1 + p + p + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
+#article h1 + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
 .western{padding-left: 5%;padding-right:5%;font-size: 1.3rem;}
