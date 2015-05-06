@@ -81,7 +81,7 @@ var router = new $.mobile.Router({
               var col = $(this).css('border-bottom-color');
               localStorage.setItem('color',col);
               var href = $(this).parent().find('.imagen').find('a').attr("href");
-              $.mobile.changePage(href,{role:"page",transition:"flip"});
+              $.mobile.changePage(href,{role:"page",transition:"pop"});
           });
           
            $('.imagen a').click(function(e) {
@@ -383,7 +383,7 @@ var router = new $.mobile.Router({
                 var id_cat = $(this).attr('data-cat-id');
                 var href = $(this).attr("href");
                 clean_containers();
-                $.mobile.changePage(href+"&id_cat="+id_cat,{role:"page",transition:"flip"});
+                $.mobile.changePage(href+"&id_cat="+id_cat,{role:"page",transition:"flow"});
             });
             $('.item_category').click(function(e){
                 $(e.target).find('.text').find('a').click();
@@ -425,8 +425,9 @@ var router = new $.mobile.Router({
                       galeria.forEach(function(o,i){
                           htm += img_slide.replace('##slide', o);
                       });
+                      
                       $('.content_article').append(html);
-                       $('.content_article').fadeIn(800);
+                      $('.content_article').fadeIn(800);
                       $('.content_article').find('.flexslider').find('.slides').html(htm);
                       
                       $('.flexslider').flexslider({controlNav:false});
