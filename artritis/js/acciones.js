@@ -48,14 +48,16 @@ var router = new $.mobile.Router({
              $('.home').show();
           }
       });
-    $('span').unbind('click').click(function(e){
-        var idioma = e.target.className;
-        localStorage.setItem("idioma", idioma);
-        $.mobile.changePage( "#menu", { role: "page" } );
+    $('span a').unbind('click').click(function(e){
         $('#menu div[data-role="content"]').css('display','none');
     });
   },
   menu: function(type,match,ui){
+     var parameters = router.getParams(match[1]);
+     var idioma = parameters.lang;
+     
+     localStorage.setItem("idioma", idioma);
+     
      if(localStorage.getItem('idioma') == 'eng'){
          $('.title_app').text('Professional tips for arthritis');
      }else{
@@ -78,7 +80,8 @@ var router = new $.mobile.Router({
              $('.content_entries').fadeOut(5);
               var col = $(this).css('border-bottom-color');
               localStorage.setItem('color',col);
-              $(this).parent().find('.imagen').find('a').unbind('click').click();
+              var href = $(this).parent().find('.imagen').find('a').attr("href");
+              $.mobile.changePage(href,{role:"page",transition:"flip"});
           });
           
            $('.imagen a').click(function(e) {
@@ -90,11 +93,15 @@ var router = new $.mobile.Router({
                  
                 clean_containers();
                  
-                 window.location = href;
+                 $.mobile.changePage(href,{role:"page",transition:"slidefade"});
                  
              });
              $('.back_languaje').unbind('click').click(function() {
-                 $.mobile.changePage( "#home", { role: "page" } );
+                 $('.home').css('display','none');
+                 $.mobile.changePage( "#home", { 
+                    role: "page",
+                    transition: "flow"
+                 } );
              });
      },500);
      
@@ -261,6 +268,9 @@ var router = new $.mobile.Router({
          theme: 'z',
          html: ""
      }); 
+     
+     
+     
       var parameters = router.getParams(match[1]);
       
          if(typeof(Storage) !== "undefined") {
@@ -272,7 +282,7 @@ var router = new $.mobile.Router({
                   data:{
                       accion:"entradas",
                       id: parameters.id,
-                        idioma:localStorage.getItem("idioma")
+                      idioma:localStorage.getItem("idioma")
                   },success:function(data){
                       var response = JSON.parse(data);
                       var entries_template = $('#entries').html();
@@ -291,8 +301,8 @@ var router = new $.mobile.Router({
                              theme: 'z',
                              html: ""
                          });
-                      $('.title_entrade').text(category);
-                     $('.content_entries').fadeIn(500);
+                        $('.title_entrade').text(category);
+                        $('.content_entries').fadeIn(500);
                   }
                 });
             }else{
@@ -373,7 +383,7 @@ var router = new $.mobile.Router({
                 var id_cat = $(this).attr('data-cat-id');
                 var href = $(this).attr("href");
                 clean_containers();
-                window.location = href+"&id_cat="+id_cat;
+                $.mobile.changePage(href+"&id_cat="+id_cat,{role:"page",transition:"flip"});
             });
             $('.item_category').click(function(e){
                 $(e.target).find('.text').find('a').click();

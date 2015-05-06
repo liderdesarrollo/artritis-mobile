@@ -1721,7 +1721,7 @@ progress  {
     font-weight: 300;
 }
 
-.imagen a img{
+.imagen img{
     max-width:100%;
     min-width:100%;
     width:auto;
@@ -1731,15 +1731,15 @@ progress  {
     transition: .5s;
 }
 @media(max-width: 360px){
-    .imagen a img{
+    .imagen img{
           margin-left: 0%;
     }  
-    .m:nth-child(2) .altura:nth-child(2) .imagen a img{
+    .m:nth-child(2) .altura:nth-child(2) .imagen img{
           width: 100%;
     }  
 }
 @media(min-width: 440px){
-    .imagen a img{
+    .imagen img{
         width: 100%;
         height: auto;
     }    

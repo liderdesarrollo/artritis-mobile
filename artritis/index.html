@@ -10,11 +10,11 @@
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         
          <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+        <link rel="stylesheet" href="css/materialize.min.css">
 
 		<!-- jQueryMobileCSS - original without styling -->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-		<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+		<link href='css/roboto.css' rel='stylesheet' type='text/css'>
 
 		<!-- nativeDroid core CSS -->
         <link rel="stylesheet" href="css/jquerymobile.nativedroid.css"   />
@@ -31,10 +31,10 @@
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
          <script src="js/jquery.mobile.router.js"></script>  
-        <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
         
         <script src="js/jquery.flexslider-min.js"></script>
-        <script src="js/jquery.stellar.js"></script>
+        <script src="js/materialize.min.js"></script>
         
         <!-- Compiled and minified JavaScript -->
          <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>-->
@@ -47,9 +47,9 @@
             <div class="home">
                 <div class="image"></div>
                 <div class="lenguaje">
-                    <span class="eng">English</span>
+                    <span class="waves-effect waves-mywavecolor btn-flat eng" data-language="eng"><a href="#menu?lang=eng" data-transition="flip">English</a></span>
                     <hr>
-                    <span class="esp">Español</span>
+                    <span class="waves-effect waves-mywavecolor btn-flat esp" data-language="esp"><a href="#menu?lang=esp" data-transition="flip">Español</a></span>
                 </div>
             </div>
         </div>
@@ -87,10 +87,10 @@
 
     </body>
     <script type="text/html" id="categorias0">
-            <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+            <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img" > </a></div><div class="titulo title"> ##titulo</div> </div>
     </script>
     <script type="text/html" id="categorias1">
-            <div class="ui-block-b altura"><div class="imagen"><a href="#entrades?id=##id"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+            <div class="ui-block-b altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
     </script>
     <script type="text/html" id="entries">
         <div class="item_category">
