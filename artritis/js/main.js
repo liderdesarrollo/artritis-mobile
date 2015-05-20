@@ -1,3 +1,0 @@
-function helloWrold(){
-    echo "string";
-}

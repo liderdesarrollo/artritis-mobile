@@ -9,7 +9,7 @@
 		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
         <link rel="stylesheet" href="css/font-awesome.min.css" />
         
-         <!-- Compiled and minified CSS -->
+        <!-- Compiled and minified CSS -->
         <link rel="stylesheet" href="css/materialize.min.css">
 
 		<!-- jQueryMobileCSS - original without styling -->
@@ -30,62 +30,80 @@
 		<!-- jQuery / jQueryMobile Scripts -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
-         <script src="js/jquery.mobile.router.js"></script>  
+        <script src="js/jquery.mobile.router.js"></script>  
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         
         <script src="js/jquery.flexslider-min.js"></script>
         <script src="js/materialize.min.js"></script>
         
         <!-- Compiled and minified JavaScript -->
-         <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>-->
        
-         <script src="js/acciones.js"></script>
+        <script src="js/acciones.js"></script>
     </head>
     <body>
-    <div data-role="page" data-title="App Movil Arthritis / Artritis" data-theme="b" id="home">
-        <div data-role="content" >
-            <div class="home">
-                <div class="image"></div>
-                <div class="lenguaje">
-                    <span class="waves-effect waves-mywavecolor btn-flat eng" data-language="eng"><a href="#menu?lang=eng" data-transition="flip">English</a></span>
-                    <hr>
-                    <span class="waves-effect waves-mywavecolor btn-flat esp" data-language="esp"><a href="#menu?lang=esp" data-transition="flip">Español</a></span>
+        <div data-role="page" data-title="App Movil Arthritis / Artritis" data-theme="b" id="home">
+            <div data-role="content" >
+                <div class="home">
+                    <div class="image"></div>
+                    <div class="lenguaje">
+                        <span class="waves-effect waves-mywavecolor btn-flat eng" data-language="eng"><a href="#menu?lang=eng" data-transition="flip">English</a></span>
+                        <hr>
+                        <span class="waves-effect waves-mywavecolor btn-flat esp" data-language="esp"><a href="#menu?lang=esp" data-transition="flip">Español</a></span>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-        
-    <div data-role="page" data-title="Menu Categories / Categorias" data-theme='b' id="menu">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-            <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back_languaje" role="button"><i class="fa fa-bars" style="font-size: inherit;"></i></a><span class="title_app"></span></h1>
-        </div>
-        <div data-role="content" class="categories"> 
-        
-       </div>
-        <div data-role='panel' id='mypanel' data-theme='b'>
-            Menu
-        </div>
-
-    </div>
-    
-    <div data-role="page" data-title="Entrades / Entradas" data-theme='b' id="entrades">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-            <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left"  style="  padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
-        </div>
-        <div data-role="content" class="content_entries" style="padding-top: 0px;display: none">   
             
+        <div data-role="page" data-title="Menu Categories / Categorias" data-theme='b' id="menu">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+                <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back_languaje" role="button"><i class="fa fa-bars" style="font-size: inherit;"></i></a><span class="title_app"></span></h1>
+            </div>
+            <div data-role="content" class="categories"> 
+            
+           </div>
+           <div class="terms">
+               <a data-target="modal1" class="waves-effect waves-teal btn-flat btn modal-trigger">Terms and Conditions</a>
+               <a data-target="modal2" class="waves-effect waves-teal btn-flat btn modal-trigger">Términos y Condiciones</a>
+           </div>
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <p><strong>Important Disclaimer:</strong><br><br>
+                  The content on this application is provided for informational purposes only.  It is not intended to be a substitution for professional medical advice.  Always seek the advice of your physician or other qualified health provider if you have questions or concerns regarding a medical condition.  </p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-light btn" style="color:white">Agree</a>
+                </div>
+            </div>
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <p>
+                        <strong>Aviso Importante:</strong> <br><br>El contenido en esta solicitud se proporciona únicamente con fines informativos. No pretende ser una sustitución para el consejo médico profesional. Procure siempre el consejo de su médico u otro profesional de la salud calificado si tiene preguntas o dudas respecto a una condición médica.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class=" modal-action modal-close waves-effect waves-light btn" style="color:white">De acuerdo</a>
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div data-role="page" data-title="Article / Articulo" data-theme='b' id="article">
-        <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-            <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
+        
+        <div data-role="page" data-title="Entrades / Entradas" data-theme='b' id="entrades">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+                <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left"  style="  padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
+            </div>
+            <div data-role="content" class="content_entries" style="padding-top: 0px;display: none">   
+                
+            </div>
         </div>
-        <div data-role="content" class="content_article" style="padding-top: 0px;">
+        
+        <div data-role="page" data-title="Article / Articulo" data-theme='b' id="article">
+            <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
+                <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
+            </div>
+            <div data-role="content" class="content_article" style="padding-top: 0px;">
+            </div>
         </div>
-    </div>
-
     </body>
+    
     <script type="text/html" id="categorias0">
             <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img" > </a></div><div class="titulo title"> ##titulo</div> </div>
     </script>

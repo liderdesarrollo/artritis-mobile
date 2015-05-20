@@ -73,12 +73,21 @@ body{background: rgb(238, 238, 238)!important;}
 @media(min-width:800px){
     .imagen{height:200px;}
 }
+@media only screen and (max-width: 992px){
+    .modal {
+      width: 94%;
+    }
+}
 #article h1 + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
 #article h1 + p + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
 #article h1 + p + p + p + ul{list-style-type: circle;padding-left: 11%;font-size: 1.3rem;}
 #article h1 + p + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
 #article h1 + p + p + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
 #article h1 + p + ul li{list-style-type: circle;font-size: 1.3rem;padding-bottom:1rem;}
+
+.terms{text-align: center;margin-top: 3%;}
+.terms a{display: none; padding: .5em 1em; color: black!important; background: transparent;font-weight: bold!important;text-decoration: underline!important;}
+.terms a:hover{color: white!important; background: #0071B7;}
 .western{padding-left: 5%;padding-right:5%;font-size: 1.3rem;}
 
 .waves-effect.waves-mywavecolor .waves-ripple {background-color: rgba(244, 155, 56,.4);}

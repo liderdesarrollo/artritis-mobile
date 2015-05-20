@@ -56,6 +56,14 @@ var router = new $.mobile.Router({
      var parameters = router.getParams(match[1]);
      var idioma = parameters.lang;
      
+     if(idioma == 'eng'){
+         $('.terms a').fadeOut(500);
+         $('.terms a').eq(0).fadeIn(3000);
+     }else if(idioma == 'esp'){
+         $('.terms a').fadeOut(500);
+         $('.terms a').eq(1).fadeIn(3000);
+     }
+     
      localStorage.setItem("idioma", idioma);
      
      if(localStorage.getItem('idioma') == 'eng'){
@@ -253,7 +261,9 @@ var router = new $.mobile.Router({
         
     }
     
-      
+      $(document).ready(function(){
+          $('.modal-trigger').leanModal();
+      });
 
   },
   entrades:function(type,match,ui){
