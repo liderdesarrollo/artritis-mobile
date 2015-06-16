@@ -62,26 +62,30 @@
             
            </div>
            <div class="terms">
-               <a data-target="modal1" class="waves-effect waves-teal btn-flat btn modal-trigger">Terms and Conditions</a>
-               <a data-target="modal2" class="waves-effect waves-teal btn-flat btn modal-trigger">Términos y Condiciones</a>
+               <a data-rel="dialog" data-transition="slideDown" class="waves-effect waves-teal btn-flat btn modal-trigger" id="eng">Terms and Conditions</a>
+               <a data-rel="dialog" data-transition="slideDown" class="waves-effect waves-teal btn-flat btn modal-trigger" id="esp">Términos y Condiciones</a>
            </div>
-            <div id="modal1" class="modal">
-                <div class="modal-content">
-                  <p><strong>Important Disclaimer:</strong><br><br>
-                  The content on this application is provided for informational purposes only.  It is not intended to be a substitution for professional medical advice.  Always seek the advice of your physician or other qualified health provider if you have questions or concerns regarding a medical condition.  </p>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-light btn" style="color:white;background: #0071B7!important;">Agree</a>
+    	   <div data-role="popup" data-transition="flip" id="m1" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all pop-up-warning-empty-filter">
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                    <div class="modal-content">
+                      <p><strong>Important Disclaimer:</strong><br><br>
+                      The content on this application is provided for informational purposes only.  It is not intended to be a substitution for professional medical advice.  Always seek the advice of your physician or other qualified health provider if you have questions or concerns regarding a medical condition.  </p>
+                    </div>
+                    <div class="modal-footer">
+                      <a data-role="button" data-rel="back" class="waves-effect waves-light btn" style="color:white;background: #0071B7!important;">Agree</a>
+                    </div>
                 </div>
             </div>
-            <div id="modal2" class="modal">
-                <div class="modal-content">
-                    <p>
-                        <strong>Aviso Importante:</strong> <br><br>El contenido en esta solicitud se proporciona únicamente con fines informativos. No pretende ser una sustitución para el consejo médico profesional. Procure siempre el consejo de su médico u otro profesional de la salud calificado si tiene preguntas o dudas respecto a una condición médica.
-                    </p>
-                </div>
-                <div class="modal-footer">
-                  <a href="#!" class=" modal-action modal-close waves-effect waves-light btn" style="color:white;background: #0071B7!important;">De acuerdo</a>
+           <div data-role="popup" data-transition="flip" id="m2" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all pop-up-warning-empty-filter">
+                <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                     <div class="modal-content">
+                        <p>
+                            <strong>Aviso Importante:</strong> <br><br>El contenido en esta solicitud se proporciona únicamente con fines informativos. No pretende ser una sustitución para el consejo médico profesional. Procure siempre el consejo de su médico u otro profesional de la salud calificado si tiene preguntas o dudas respecto a una condición médica.
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                      <a data-role="button" data-rel="back" class="waves-effect waves-light btn" style="color:white;background: #0071B7!important;">De acuerdo</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,7 +101,7 @@
         
         <div data-role="page" data-title="Article / Articulo" data-theme='b' id="article">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
-                <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
+                <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> <span class="title_article"></span></h1>
             </div>
             <div data-role="content" class="content_article" style="padding-top: 0px;">
             </div>
@@ -105,7 +109,7 @@
     </body>
     
     <script type="text/html" id="categorias0">
-            <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img" > </a></div><div class="titulo title"> ##titulo</div> </div>
+            <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
     </script>
     <script type="text/html" id="categorias1">
             <div class="ui-block-b altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
@@ -114,7 +118,7 @@
         <div class="item_category">
             <div class="ui-block-a" style="width:15%;text-align: center;"> 
                 <div class="item_category_container">
-                    <img src="##img" class="circle responsive-img" style="width:100%; height: 60px"> 
+                    <img src="##img" class="responsive-img" style="width:120%; height: 70px; max-width: inherit; position: relative;"> 
                 </div>
             </div>
             <div class="ui-block-b text" style="width:80%;">

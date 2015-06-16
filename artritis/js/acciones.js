@@ -21,6 +21,7 @@ var router = new $.mobile.Router({
   "#article": {handler: "article", events: "s" },
 },{
   home: function(type,match,ui){
+      
       $('.home').hide();
       $.mobile.loading( 'show', {
          text: 'Sincronizando...',
@@ -58,8 +59,25 @@ var router = new $.mobile.Router({
      
      if(idioma == 'eng'){
          $('.terms a').fadeOut(500).eq(0).fadeIn(3000);
+         $('#eng').unbind('click').click(function(){
+             $('#m1').popup('open');
+         });
      }else if(idioma == 'esp'){
          $('.terms a').fadeOut(500).eq(1).fadeIn(3000);
+         $('#esp').unbind('click').click(function(){
+             $('#m2').popup('open');
+         });
+     }
+     
+     var terms = getCookie('validado'); 
+     
+     if( terms == "" ){
+         setCookie('validado','si',1);
+         if(idioma == 'eng'){
+             setTimeout(function(){ $('.terms a').eq(0).click(); },1000);
+         }else if(idioma == 'esp'){
+            setTimeout(function(){ $('.terms a').eq(1).click(); },1000);
+         }
      }
      
      localStorage.setItem("idioma", idioma);
@@ -69,7 +87,9 @@ var router = new $.mobile.Router({
      }else{
          $('.title_app').text('Consejos profesionales para la artritis');
      }
+     
      $('#menu div[data-role="content"]').css('display','none');
+     
      $.mobile.loading( 'show', {
          text: 'Cargando...',
          textVisible: true,
@@ -92,17 +112,22 @@ var router = new $.mobile.Router({
           
            $('.imagen a').click(function(e) {
                  e.preventDefault();
+
+                 var titulo = $(this).parent().parent().find('.titulo').text();                 
+                 $('.title_entrade').text(titulo);
+                 
                  var color = $(this).parent().parent().find('.titulo').css('border-bottom-color');
                  localStorage.setItem('color',color);
                  var href = $(this).attr("href");
                  var c = localStorage.getItem('color');
                  
-                clean_containers();
+                 clean_containers();
                  
                  $.mobile.changePage(href,{role:"page",transition:"slidefade"});
                  
              });
              $('.back_languaje').unbind('click').click(function() {
+                 deleteAndClearCookies('validado');
                  $('.home').css('display','none');
                  $.mobile.changePage( "#home", { 
                     role: "page",
@@ -258,10 +283,6 @@ var router = new $.mobile.Router({
         }
         
     }
-    
-      $(document).ready(function(){
-          $('.modal-trigger').leanModal();
-      });
 
   },
   entrades:function(type,match,ui){
@@ -511,10 +532,12 @@ $('.back').unbind('click').click(function(){
     clean_containers()
     history.back();
 });
+
 function clean_containers(){
     $('#entrades div[data-role="content"]').empty();
     $('#article div[data-role="content"]').empty();
 }
+
 function cambiar_colores(obj,c){
     var color = c;
     obj.find('div[data-role="header"]').css('border-bottom-color',color);
@@ -527,7 +550,39 @@ function cambiar_colores(obj,c){
         $('.flexslider .slides ').css({'border-bottom':'12px solid '+color});
         $('#article h1').css({'color':color,'border-bottom':"1px solid "+color});
         
-    },500);
+    },50);
     console.log($('.item_category'));
 }
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return "";
+}
+
+function deleteAndClearCookies (name){
+  // This function will attempt to remove a cookie from all paths.
+  var pathBits = location.pathname.split('/');
+  var pathCurrent = ' path=';
+
+  // do a simple pathless delete first.
+  document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;';
+
+  for (var i = 0; i < pathBits.length; i++) {
+      pathCurrent += ((pathCurrent.substr(-1) != '/') ? '/' : '') + pathBits[i];
+      document.cookie = name + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT;' + pathCurrent + ';';
+  }
+};
 
