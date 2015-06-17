@@ -3,8 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="cache-control" content="no-cache">
-        <title>nativeDroid - Theme for jQuery Mobile - index</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <title>Therapy Tips For Arthritis</title>
 		
 		<!-- FontAwesome - http://fortawesome.github.io/Font-Awesome/ -->
         <link rel="stylesheet" href="css/font-awesome.min.css" />
@@ -29,19 +29,17 @@
 
 		<!-- jQuery / jQueryMobile Scripts -->
 		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-
         <script src="js/jquery.mobile.router.js"></script>  
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
-        
         <script src="js/jquery.flexslider-min.js"></script>
         <script src="js/materialize.min.js"></script>
         
         <!-- Compiled and minified JavaScript -->
-       
         <script src="js/acciones.js"></script>
     </head>
     <body>
-        <div data-role="page" data-title="App Movil Arthritis / Artritis" data-theme="b" id="home">
+        <!-- Página principal -->
+        <div data-role="page" data-title=" Arthritis / Artritis" data-theme="b" id="home">
             <div data-role="content" >
                 <div class="home">
                     <div class="image"></div>
@@ -53,8 +51,9 @@
                 </div>
             </div>
         </div>
-            
-        <div data-role="page" data-title="Menu Categories / Categorias" data-theme='b' id="menu">
+          
+        <!-- Página del Menú -->
+        <div data-role="page" data-title="Categories / Categorias" data-theme='b' id="menu">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
                 <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back_languaje" role="button"><i class="fa fa-bars" style="font-size: inherit;"></i></a><span class="title_app"></span></h1>
             </div>
@@ -90,6 +89,7 @@
             </div>
         </div>
         
+        <!-- Página de las entradas -->
         <div data-role="page" data-title="Entrades / Entradas" data-theme='b' id="entrades">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
                 <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left"  style="  padding-right: 10px; font-size: 31px;"></i></a> <span class="title_entrade"></span></h1>
@@ -99,6 +99,7 @@
             </div>
         </div>
         
+        <!-- Página de un articulo -->
         <div data-role="page" data-title="Article / Articulo" data-theme='b' id="article">
             <div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme='b'>
                 <h1 style="margin:0;"><a href="#" data-role="button" data-inline="true" class="back" role="button"><i class="fa fa-angle-left" style="padding-right: 10px; font-size: 31px;"></i></a> <span class="title_article"></span></h1>
@@ -106,44 +107,45 @@
             <div data-role="content" class="content_article" style="padding-top: 0px;">
             </div>
         </div>
-    </body>
     
-    <script type="text/html" id="categorias0">
-            <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
-    </script>
-    <script type="text/html" id="categorias1">
-            <div class="ui-block-b altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
-    </script>
-    <script type="text/html" id="entries">
-        <div class="item_category">
-            <div class="ui-block-a" style="width:15%;text-align: center;"> 
-                <div class="item_category_container">
-                    <img src="##img" class="responsive-img" style="width:120%; height: 70px; max-width: inherit; position: relative;"> 
+        <!-- Plantillas -->
+        <script type="text/html" id="categorias0">
+                <div class="ui-block-a altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+        </script>
+        <script type="text/html" id="categorias1">
+                <div class="ui-block-b altura"><div class="imagen"><a href="#entrades?id=##id" data-transition="pop"> <img src="##img"> </a></div><div class="titulo title"> ##titulo</div> </div>
+        </script>
+        <script type="text/html" id="entries">
+            <div class="item_category">
+                <div class="ui-block-a" style="width:15%;text-align: center;"> 
+                    <div class="item_category_container">
+                        <img src="##img" class="responsive-img" style="width:120%; height: 70px; max-width: inherit; position: relative;"> 
+                    </div>
+                </div>
+                <div class="ui-block-b text" style="width:80%;">
+                    <a href="#article?id=##id" data-cat-id="##cat_id"><h5 class="title">##title</h5></a>
                 </div>
             </div>
-            <div class="ui-block-b text" style="width:80%;">
-                <a href="#article?id=##id" data-cat-id="##cat_id"><h5 class="title">##title</h5></a>
-            </div>
-        </div>
-    </script>
-    <script id="detalle_entrada" type="text/html">
-        <div class="entrada">
-            <div class="flexslider">
-                <ul class="slides">
-                </ul>
-            </div>
-            
-            <div>
-                <h1 style="width: 80%;margin: 0 auto;">##title</h1>
-                <p style="padding-left: 5%;
-      padding-right: 5%;">##content</p>
+        </script>
+        <script id="detalle_entrada" type="text/html">
+            <div class="entrada">
+                <div class="flexslider">
+                    <ul class="slides">
+                    </ul>
+                </div>
                 
+                <div>
+                    <h1 style="width: 80%;margin: 0 auto;">##title</h1>
+                    <p style="padding-left: 5%;
+          padding-right: 5%;">##content</p>
+                    
+                </div>
             </div>
-        </div>
-    </script>
-    <script id="slide" type="text/html">
-        <li>
-            <img  src="##slide" class="img-parallax"/>
-        </li>
-    </script>
+        </script>
+        <script id="slide" type="text/html">
+            <li>
+                <img  src="##slide" class="img-parallax"/>
+            </li>
+        </script>
+    </body>
 </html>
